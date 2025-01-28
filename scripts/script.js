@@ -110,7 +110,7 @@ const formHandler = new Web3FormHandler();
 // Function to handle form submissions
 function handleFormSubmission(formContainerClass) {
     const formContainer = document.querySelector(`.${formContainerClass}`);
-    console.log("HEre 113")
+   
     if (!formContainer) {
         console.error(`Form container with class ${formContainerClass} not found.`);
         return;
