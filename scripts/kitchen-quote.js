@@ -143,11 +143,11 @@ function updateMeasurementFields(layout) {
                 <div class="input-container">
                     <div class="dimension-item">
                         <label for="dimension-a">A:</label>
-                        <input type="text" id="dimension-a" placeholder="ft." oninput="updateMeasurement('dimension-a', this.value)">
+                        <input type="number" id="dimension-a" placeholder="ft." oninput="updateMeasurement('dimension-a', this.value)">
                     </div>
                     <div class="dimension-item">
                         <label for="dimension-b">B:</label>
-                        <input type="text" id="dimension-b" placeholder="ft." oninput="updateMeasurement('dimension-b', this.value)">
+                        <input type="number" id="dimension-b" placeholder="ft." oninput="updateMeasurement('dimension-b', this.value)">
                     </div>
                 </div>
             </div>
@@ -163,7 +163,7 @@ function updateMeasurementFields(layout) {
                 <div class="input-container">
                     <div class="dimension-item">
                         <label for="dimension-a">A:</label>
-                        <input type="text" id="dimension-a" placeholder="ft." oninput="updateMeasurement('dimension-a', this.value)">
+                        <input type="number" id="dimension-a" placeholder="ft." oninput="updateMeasurement('dimension-a', this.value)">
                     </div>
                 </div>
             </div>
