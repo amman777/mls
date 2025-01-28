@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Living Solutions</title>
+  <!-- Style Sheet link -->
+  <link rel="stylesheet" href="css/quote.css">
+  <!-- website icon -->
+  <link rel="shortcut icon" type="images" href="./images/mini-logo.png">
+
+  <!-- bootstrap links -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!-- icons  and animation-->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+
+
+  <!-- Swipper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Nav Bar -->
+  <header>
+    <nav class="navbar navbar-expand-md" id="navbar-color">
+      <div class="container">
+
+        <a class="navbar-brand" href="index.html" id="logo">
+          <img src="./images/logo.png" alt="">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="quiz">
+    <div id="kitchen-quiz">
+      <!-- First Step: Layout Selection -->
+      <div class="quiz-section" id="step-1">
+        <div class="question-option-block text-center">
+          <h2 class="subtitle_large text-center mb-4">
+            Select the <span> layout</span>
+          </h2>
+          <div class="option-group mt-4 flex flex-wrap justify-center">
+            <!-- Layout Options -->
+            <div class="option-card" onclick="selectLayout('L-shaped', this)">
+              <img src="images/L-shape-kitchen-main.avif" alt="L-shaped" class="layout-image">
+              <p class="subtitle_small">L-shaped</p>
+            </div>
+            <div class="option-card" onclick="selectLayout('straight', this)">
+              <img src="images/straight-kitchen-main.avif" alt="straight" class="layout-image">
+              <p class="subtitle_small">Straight</p>
+            </div>
+            <div class="option-card" onclick="selectLayout('U-shaped', this)">
+              <img src="images/u-shape-kitchen-main.avif" alt="U-shaped" class="layout-image">
+              <p class="subtitle_small">U-shaped</p>
+            </div>
+            <div class="option-card" onclick="selectLayout('Parallel', this)">
+              <img src="images/parallel-kitchen-main.avif" alt="Parallel" class="layout-image">
+              <p class="subtitle_small">Parallel</p>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="navigation-buttons flex justify-between py-2">
+            <button class="btn back-btn" disabled>BACK</button>
+            <button class="btn next-btn" onclick="showNextStep(2)">NEXT</button>
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <!-- Second Step: Measurement Review -->
+      <div class="quiz-section hidden" id="step-2">
+        <div class="question-option-block text-center">
+          <p class="subtitle_large mb-2">Measurements for <span>Accuracy</span> </p>
+
+    
+          <div id="layout-image-section" class="text-center mb-4">
+            <!-- Image and Label will be inserted here dynamically -->
+          </div>
+
+          <!-- Measurement Fields -->
+          <div id="measurement-fields" class="dimensions-block mt-4">
+            <!-- Measurement Fields will be inserted here dynamically -->
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="navigation-buttons flex justify-between py-2">
+            <button class="btn back-btn" onclick="showPreviousStep(1)">BACK</button>
+            <button class="btn next-btn" onclick="showNextStep(3)">NEXT</button>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Third Step: Package Selection -->
+      <div class="quiz-section hidden" id="step-3">
+        <div class="question-option-block text-center">
+          <p class="subtitle_large mb-2">Pick your <span>Package</span></p>
+
+          <div class="package-options mt-4">
+            <!-- Package Options -->
+            <div class="package-card">
+              <div class="header">Basic Plan</div>
+              <img src="images/basic-plan-kitchen.avif" alt="Basic Plan">
+              <ul>
+                <li><i class="ri-check-line"></i>Minimal pricing</li>
+                <li><i class="ri-check-line"></i>Standard materials</li>
+                <li><i class="ri-check-line"></i>Essential designs and finishes</li>
+              </ul>
+            </div>
+            <div class="package-card">
+              <div class="header">Affordable Plan</div>
+              <img src="images/affordable-kitchen.avif" alt="Affordable Plan">
+              <ul>
+                <li><i class="ri-check-line"></i>High-quality materials</li>
+                <li><i class="ri-check-line"></i>Customizable designs</li>
+                <li><i class="ri-check-line"></i>Soft-close accessories</li>
+              </ul>
+            </div>
+            <div class="package-card">
+              <div class="header">Luxury Plan</div>
+              <img src="images/luxury-kitchen.avif" alt="Luxury Plan">
+              <ul>
+                <li><i class="ri-check-line"></i>Premium materials and finishes</li>
+                <li><i class="ri-check-line"></i>Exclusive designs and features</li>
+                <li><i class="ri-check-line"></i>Advanced technology integrations</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="navigation-buttons flex justify-between py-2">
+            <button class="btn back-btn" onclick="showPreviousStep(2)">BACK</button>
+            <button class="btn next-btn" onclick="showNextStep(4)">NEXT</button>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Fourth Step: User Input -->
+      <div class="quiz-section hidden" id="step-4">
+        <div class="form-container-3">
+          <h2>Designs for Every <span>Budget</span></h2>
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" placeholder="+91 Phone number" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Additional Requirement">
+            </div>
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" id="whatsappUpdates">
+              <label class="form-check-label" for="whatsappUpdates">
+                Send me updates on WhatsApp
+              </label>
+            </div>
+            <small class="d-block mt-2 text-center">
+              By submitting this form, you agree to the
+              <a href="#">privacy policy</a> &
+              <a href="#">terms and conditions</a>.
+            </small>
+          </form>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons flex justify-between py-2">
+          <button class="btn back-btn" onclick="showPreviousStep(3)">BACK</button>
+          <button class="btn submit-btn" onclick="submitQuiz()">SUBMIT</button>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS (via CDN) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+  <script>
+    AOS.init();
+  </script>
+  <script src="scripts/email-integration.js"></script>
+  <script src="scripts/kitchen-quote.js"></script>
+  </div>
+</body>
+
+</html>
