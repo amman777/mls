@@ -173,3 +173,27 @@ function handleFormSubmission(formContainerClass) {
 // Initialize form handlers for both forms
 handleFormSubmission("form-container-1");
 handleFormSubmission("form-container-2");
+
+
+
+
+
+
+// FAQ section
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
+        const isOpen = answer.style.display === 'block';
+        
+        document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
+        document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+        document.querySelectorAll('.faq-icon').forEach(icn => icn.classList.replace('ri-subtract-line', 'ri-add-line'));
+        
+        if (!isOpen) {
+            answer.style.display = 'block';
+            item.classList.add('active');
+            icon.classList.replace('ri-add-line', 'ri-subtract-line');
+        }
+    });
+});
