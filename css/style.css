@@ -360,6 +360,50 @@ color: var(--text-dark);
 }
 
 /* **********************************************Hero Section Code************************************ */
+/* ------------------------------------------3 icons section code------------------------------ */
+
+
+
+
+#features {
+    font-family: "Mulish", sans-serif !important;
+    background-color: var(--white);
+    padding: 2rem 0 !important;
+    height: 25vh;
+}
+.feature-icon {
+    width: 50px; /* Adjusted icon size */
+    height: auto;
+    margin-bottom: 6px;
+}
+.feature-title {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--text-dark);
+}
+@media (max-width: 768px) {
+    #features {
+        border-radius: 24px;
+        padding: 5rem 0;
+        height: 15vh;
+    }
+    .feature-title {
+        /* display: none; */
+        font-size: 0.8rem;
+    }
+    .feature-icon {
+        width: 40px; /* Smaller size for small screens */
+    }
+    .row {
+        flex-wrap: nowrap;
+        justify-content: space-around;
+          /* width: max-content; */
+
+    }
+}
+
+
+
 /* ********************************************Whatsapp-icon code********************** */
 #whatsApp-icon {
     position: fixed;
@@ -374,7 +418,7 @@ color: var(--text-dark);
     justify-content: center;
     width: 50px;
     height: 50px;
-    background-color: var(--primary-color);
+    background-color: #7fc36c;
     color: white;
     font-size: 30px;
     border-radius: 50%;
@@ -987,6 +1031,64 @@ justify-content: center !important;
 }
 
 /* ******************************************************Video Section **************************** */
+
+/* ******************************FAQ section code****************************** */
+.faq-section {
+    max-width: var(--max-width);
+    margin: 0rem auto;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    margin-top: -2rem;
+}
+.faq-section .container{
+    padding: 0 !important;
+}
+.faq-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.faq-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+.faq-item {
+    background: var(--extra-light);
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+.faq-item.active {
+    background: var(--primary-color);
+    /* background: rgb(206, 182, 59); */
+    color: var(--white);
+}
+.faq-question {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-answer {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+  
+}
+.faq-answer ul {
+    list-style: none; /* Removes bullet points */
+    padding-left: 0; /* Removes default padding */
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
 
 /* ******************************************************Footer Section **************************** */
 
